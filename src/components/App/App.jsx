@@ -5,6 +5,7 @@ import ContactForm from './ContactForm';
 import ContactList from './ContactList';
 import Filter from './Filter';
 import Message from './Message';
+import css from './App.module.css';
 
 class App extends Component {
   state = {
@@ -59,13 +60,13 @@ class App extends Component {
     const length = this.state.contacts.length;
 
     return (
-      <div>
-        <h1>
-          Phone<span>book</span>
+      <div className={css.container}>
+        <h1 className={css.title}>
+          Phone<span className={css.title__color}>book</span>
         </h1>
         <ContactForm onSubmit={addContact} />
 
-        <h2>Contacts</h2>
+        <h2 className={css.subtitle}>Contacts</h2>
         <Filter filter={filter} changeFilter={changeFilter} />
         {length > 0 ? (
           <ContactList
