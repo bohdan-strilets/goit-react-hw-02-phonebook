@@ -11,7 +11,7 @@ function ContactList({ contacts, onDeleteContact }) {
             <Contact
               name={name}
               number={number}
-              onDeleteContact={onDeleteContact}
+              onDeleteContact={() => onDeleteContact(id)}
               contactId={id}
             />
           </li>
