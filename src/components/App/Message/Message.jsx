@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 function Message({ text }) {
   return (
     <div>
@@ -5,5 +7,9 @@ function Message({ text }) {
     </div>
   );
 }
+
+Message.prototype = {
+  text: PropTypes.string.isRequired,
+};
 
 export default Message;

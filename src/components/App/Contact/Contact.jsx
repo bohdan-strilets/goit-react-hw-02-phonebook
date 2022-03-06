@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { FaTrash, FaUserAlt } from 'react-icons/fa';
 
 function Contact({ name, number, onDeleteContact, contactId }) {
@@ -18,5 +19,12 @@ function Contact({ name, number, onDeleteContact, contactId }) {
     </>
   );
 }
+
+Contact.prototype = {
+  name: PropTypes.string.isRequired,
+  number: PropTypes.string.isRequired,
+  contactId: PropTypes.string.isRequired,
+  onDeleteContact: PropTypes.func.isRequired,
+};
 
 export default Contact;
