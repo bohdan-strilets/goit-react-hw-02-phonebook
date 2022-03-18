@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import { FaTrash, FaUserAlt } from 'react-icons/fa';
 import css from './Contact.module.css';
 
-function Contact({ name, number, onDeleteContact }) {
+function Contact({ name, number, onDeleteContact, contactId }) {
   return (
     <>
       <div className={css.wrapper}>
@@ -13,7 +13,11 @@ function Contact({ name, number, onDeleteContact }) {
       </div>
       <div className={css.wrapper}>
         <p className={css.number}>{number}</p>
-        <button className={css.button} type="button" onClick={onDeleteContact}>
+        <button
+          className={css.button}
+          type="button"
+          onClick={() => onDeleteContact(contactId)}
+        >
           <FaTrash />
         </button>
       </div>
